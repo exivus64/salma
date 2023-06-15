@@ -1,9 +1,10 @@
-import streamlit as st
+from flask import Flask
 
-st.write("""
-         # Salma is clever girl
-         Hello Salma oni-chan
-         
-         
-         """)
-         
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return '<h1> Salma is clever girl</h1><br>Hello salma oni-chan! '
+
+if __name__ == '__main__':
+    app.run()
